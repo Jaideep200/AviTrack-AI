@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Analysis Result</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="result-card">
+
+    <h1>✅ Audio Analysis Complete</h1>
+
+    <hr>
+
+    <h2>{{ filename }}</h2>
+
+    <p><strong>Duration:</strong> {{ duration }} seconds</p>
+
+    <p><strong>Sample Rate:</strong> {{ sample_rate }} Hz</p>
+
+    <p><strong>Channels:</strong> {{ channels }}</p>
+
+    <hr>
+
+    <!-- AI Prediction -->
+    <h2>🤖 AI Prediction</h2>
+
+    <div class="prediction-box">
+
+        <h3>Estimated Bird Count</h3>
+
+        <h1>{{ predicted_count }}</h1>
+
+    </div>
+
+    <hr>
+
+    <!-- Waveform -->
+    <h2>Waveform</h2>
+
+    <img
+        src="{{ url_for('static', filename='generated/waveforms/waveform.png') }}"
+        alt="Waveform"
+        class="result-image">
+
+    <hr>
+
+    <!-- Spectrogram -->
+    <h2>Mel Spectrogram</h2>
+
+    <img
+        src="{{ url_for('static', filename='generated/spectrograms/spectrogram.png') }}"
+        alt="Spectrogram"
+        class="result-image">
+
+    <hr>
+
+    <!-- Features -->
+    <h2>Extracted Audio Features</h2>
+
+    <table class="feature-table">
+
+        <tr>
+            <th>Feature</th>
+            <th>Value</th>
+        </tr>
+
+        {% for key, value in features.items() %}
+
+        <tr>
+            <td>{{ key.replace("_", " ").title() }}</td>
+            <td>{{ "%.4f"|format(value) }}</td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+    <br>
+
+    <a href="/">⬅ Upload Another Audio</a>
+
+</div>
+
+</body>
+
+</html>

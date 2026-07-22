@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AviTrack AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+    <div class="logo">
+
+        <img src="{{ url_for('static', filename='images/logo.png') }}"
+             alt="AviTrack AI Logo">
+
+        <h2>AviTrack AI</h2>
+
+    </div>
+
+
+</nav>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-text">
+
+        <span class="badge">
+            AI Powered Bird Audio Intelligence
+        </span>
+
+        <h1>
+
+            Transform Bird Sounds into Intelligent Insights
+
+        </h1>
+
+        <p>
+
+            AviTrack AI analyzes bird recordings using advanced signal processing,
+            feature extraction, spectrogram visualization, and machine learning
+            to estimate bird populations automatically.
+
+        </p>
+
+        <div class="buttons">
+
+            <a href="#upload" class="btn1">
+
+                Analyze Audio
+
+            </a>
+
+            <a href="#features" class="btn2">
+
+                Explore Features
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="hero-image">
+
+        <img src="{{ url_for('static', filename='images/logo.png') }}"
+             alt="Bird AI">
+
+    </div>
+
+</section>
+
+<!-- ================= FEATURES ================= -->
+
+<section class="features" id="features">
+
+    <div class="section-title">
+
+        <h2>Powerful AI Features</h2>
+
+        <p>
+
+            Everything you need to analyze bird sounds using Artificial Intelligence.
+
+        </p>
+
+    </div>
+
+    <div class="feature-container">
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+
+                <i class="fa-solid fa-file-audio"></i>
+
+            </div>
+
+            <h3>Audio Upload</h3>
+
+            <p>
+
+                Upload WAV recordings securely for instant AI analysis.
+
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+
+                <i class="fa-solid fa-wave-square"></i>
+
+            </div>
+
+            <h3>Waveform Analysis</h3>
+
+            <p>
+
+                Visualize sound amplitude for acoustic inspection.
+
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+            </div>
+
+            <h3>Mel Spectrogram</h3>
+
+            <p>
+
+                Generate frequency visualizations for bird sound analysis.
+
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+
+                <i class="fa-solid fa-brain"></i>
+
+            </div>
+
+            <h3>AI Prediction</h3>
+
+            <p>
+
+                Predict bird counts using Machine Learning.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <div class="section-title">
+
+        <h2>About AviTrack AI</h2>
+
+        <p>
+            Intelligent bird sound analysis powered by Artificial Intelligence and Machine Learning.
+        </p>
+
+    </div>
+
+    <div class="about-container">
+
+        <div class="about-box">
+
+            <h3>🎯 Our Mission</h3>
+
+            <p>
+                AviTrack AI helps researchers, wildlife conservationists, and bird enthusiasts
+                automatically analyze bird recordings and estimate bird populations using AI.
+            </p>
+
+        </div>
+
+        <div class="about-box">
+
+            <h3>🧠 Technologies</h3>
+
+            <ul>
+
+                <li>Python</li>
+
+                <li>Flask</li>
+
+                <li>Librosa</li>
+
+                <li>Machine Learning</li>
+
+                <li>Random Forest</li>
+
+                <li>Signal Processing</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- STATS -->
+
+<section class="stats">
+
+    <div class="stat-card">
+
+        <h2>100%</h2>
+
+        <p>Python Powered</p>
+
+    </div>
+
+    <div class="stat-card">
+
+        <h2>AI</h2>
+
+        <p>Machine Learning Model</p>
+
+    </div>
+
+    <div class="stat-card">
+
+        <h2>24/7</h2>
+
+        <p>Instant Analysis</p>
+
+    </div>
+
+    <div class="stat-card">
+
+        <h2>WAV</h2>
+
+        <p>Audio Support</p>
+
+    </div>
+
+</section>
+
+
+
+<footer>
+
+    <h2>AviTrack AI</h2>
+
+    <p>
+        Bird Audio Analysis using Artificial Intelligence
+    </p>
+
+    <p class="copyright">
+
+        © 2025 AviTrack AI
+
+    </p>
+
+</footer>
+
+<!-- ================= UPLOAD ================= -->
+
+<section class="upload-section" id="upload">
+
+    <div class="upload-card">
+
+        <h2>
+
+            Upload Bird Audio
+
+        </h2>
+
+        <p>
+
+            Select a WAV file to begin AI analysis.
+
+        </p>
+
+        <form action="/upload"
+              method="POST"
+              enctype="multipart/form-data">
+
+            <label class="upload-box" for="audio">
+
+                <div class="upload-icon">
+
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                </div>
+
+                <h3>
+
+                    Click to Upload
+
+                </h3>
+
+                <p>
+
+                    Supported format: WAV
+
+                </p>
+
+                <input
+                    type="file"
+                    id="audio"
+                    name="audio"
+                    accept=".wav"
+                    required>
+
+            </label>
+
+            <div class="selected-file">
+
+                <i class="fa-solid fa-file-audio"></i>
+
+                <span id="selected-file">
+
+                    No file selected
+
+                </span>
+
+            </div>
+
+            <button type="submit">
+
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+
+                Analyze Audio
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- ================= EXTRA INFO ================= -->
+
+<section class="cards">
+
+    <div class="card">
+
+        <h2>
+
+            🎤
+
+        </h2>
+
+        <h3>
+
+            Audio Input
+
+        </h3>
+
+        <p>
+
+            Upload bird recordings collected from forests and aviaries.
+
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <h2>
+
+            🤖
+
+        </h2>
+
+        <h3>
+
+            Machine Learning
+
+        </h3>
+
+        <p>
+
+            Extract acoustic features and estimate bird populations.
+
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <h2>
+
+            📊
+
+        </h2>
+
+        <h3>
+
+            Smart Prediction
+
+        </h3>
+
+        <p>
+
+            Display AI-generated bird count predictions instantly.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const input = document.getElementById("audio");
+    const fileText = document.getElementById("selected-file");
+
+    input.addEventListener("change", function () {
+
+        if (this.files.length > 0) {
+
+            fileText.innerHTML =
+                "🎵 " + this.files[0].name;
+
+        } else {
+
+            fileText.innerHTML =
+                "No file selected";
+
+        }
+
+    });
+
+});
+
+</script>
+
+</body>
+
+</html>
